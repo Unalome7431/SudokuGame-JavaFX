@@ -1,0 +1,870 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="740.0" style="-fx-background-color: white;" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proj.sudokuGame.Controllers.NormalGameController">
+   <top>
+      <HBox prefHeight="85.0" styleClass="header" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="85.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@logo.png" />
+               </image>
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </ImageView>
+            <Label prefHeight="85.0" text="Sudoku">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="40.0" />
+               </font>
+            </Label>
+            <Region prefHeight="85.0" prefWidth="326.0" />
+            <Label alignment="BOTTOM_CENTER" prefHeight="85.0" text="Mode: Normal" textFill="#266cdc">
+               <font>
+                  <Font name="Calibri Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </HBox>
+   </top>
+   <center>
+      <GridPane fx:id="boardGrid" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="700.0" style="-fx-border-width: 0px 4px 4px 0px; -fx-border-color: black;" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <GridPane styleClass="sub-grid">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TextField alignment="CENTER" styleClass="num-block">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="16.0" layoutY="16.0" styleClass="num-block" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="88.0" layoutY="16.0" styleClass="num-block" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="10.0" layoutY="16.0" styleClass="num-block" GridPane.columnIndex="2">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="10.0" layoutY="95.0" styleClass="num-block" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="88.0" layoutY="95.0" styleClass="num-block" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="166.0" layoutY="95.0" styleClass="num-block" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="10.0" layoutY="173.0" styleClass="num-block" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="88.0" layoutY="173.0" styleClass="num-block" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+               </children>
+            </GridPane>
+            <GridPane layoutX="10.0" layoutY="10.0" styleClass="sub-grid" GridPane.columnIndex="1">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <TextField alignment="CENTER" styleClass="num-block">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="16.0" layoutY="16.0" styleClass="num-block" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="88.0" layoutY="16.0" styleClass="num-block" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="10.0" layoutY="16.0" styleClass="num-block" GridPane.columnIndex="2">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="10.0" layoutY="95.0" styleClass="num-block" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="88.0" layoutY="95.0" styleClass="num-block" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="166.0" layoutY="95.0" styleClass="num-block" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="10.0" layoutY="173.0" styleClass="num-block" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="88.0" layoutY="173.0" styleClass="num-block" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+               </children>
+            </GridPane>
+            <GridPane layoutX="244.0" layoutY="10.0" styleClass="sub-grid" GridPane.columnIndex="2">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <TextField alignment="CENTER" styleClass="num-block">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="16.0" layoutY="16.0" styleClass="num-block" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="88.0" layoutY="16.0" styleClass="num-block" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="10.0" layoutY="16.0" styleClass="num-block" GridPane.columnIndex="2">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="10.0" layoutY="95.0" styleClass="num-block" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="88.0" layoutY="95.0" styleClass="num-block" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="166.0" layoutY="95.0" styleClass="num-block" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="10.0" layoutY="173.0" styleClass="num-block" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="88.0" layoutY="173.0" styleClass="num-block" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+               </children>
+            </GridPane>
+            <GridPane layoutX="477.0" layoutY="10.0" styleClass="sub-grid" GridPane.rowIndex="1">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <TextField alignment="CENTER" styleClass="num-block">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="16.0" layoutY="16.0" styleClass="num-block" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="88.0" layoutY="16.0" styleClass="num-block" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="10.0" layoutY="16.0" styleClass="num-block" GridPane.columnIndex="2">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="10.0" layoutY="95.0" styleClass="num-block" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="88.0" layoutY="95.0" styleClass="num-block" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="166.0" layoutY="95.0" styleClass="num-block" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="10.0" layoutY="173.0" styleClass="num-block" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="88.0" layoutY="173.0" styleClass="num-block" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+               </children>
+            </GridPane>
+            <GridPane layoutX="10.0" layoutY="243.0" styleClass="sub-grid" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <TextField alignment="CENTER" styleClass="num-block">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="16.0" layoutY="16.0" styleClass="num-block" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="88.0" layoutY="16.0" styleClass="num-block" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="10.0" layoutY="16.0" styleClass="num-block" GridPane.columnIndex="2">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="10.0" layoutY="95.0" styleClass="num-block" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="88.0" layoutY="95.0" styleClass="num-block" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="166.0" layoutY="95.0" styleClass="num-block" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="10.0" layoutY="173.0" styleClass="num-block" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="88.0" layoutY="173.0" styleClass="num-block" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+               </children>
+            </GridPane>
+            <GridPane layoutX="244.0" layoutY="243.0" styleClass="sub-grid" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <TextField alignment="CENTER" styleClass="num-block">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="16.0" layoutY="16.0" styleClass="num-block" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="88.0" layoutY="16.0" styleClass="num-block" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="10.0" layoutY="16.0" styleClass="num-block" GridPane.columnIndex="2">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="10.0" layoutY="95.0" styleClass="num-block" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="88.0" layoutY="95.0" styleClass="num-block" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="166.0" layoutY="95.0" styleClass="num-block" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="10.0" layoutY="173.0" styleClass="num-block" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="88.0" layoutY="173.0" styleClass="num-block" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+               </children>
+            </GridPane>
+            <GridPane layoutX="477.0" layoutY="243.0" styleClass="sub-grid" GridPane.rowIndex="2">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <TextField alignment="CENTER" styleClass="num-block">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="16.0" layoutY="16.0" styleClass="num-block" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="88.0" layoutY="16.0" styleClass="num-block" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="10.0" layoutY="16.0" styleClass="num-block" GridPane.columnIndex="2">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="10.0" layoutY="95.0" styleClass="num-block" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="88.0" layoutY="95.0" styleClass="num-block" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="166.0" layoutY="95.0" styleClass="num-block" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="10.0" layoutY="173.0" styleClass="num-block" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="88.0" layoutY="173.0" styleClass="num-block" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+               </children>
+            </GridPane>
+            <GridPane layoutX="10.0" layoutY="476.0" styleClass="sub-grid" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <TextField alignment="CENTER" styleClass="num-block">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="16.0" layoutY="16.0" styleClass="num-block" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="88.0" layoutY="16.0" styleClass="num-block" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="10.0" layoutY="16.0" styleClass="num-block" GridPane.columnIndex="2">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="10.0" layoutY="95.0" styleClass="num-block" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="88.0" layoutY="95.0" styleClass="num-block" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="166.0" layoutY="95.0" styleClass="num-block" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="10.0" layoutY="173.0" styleClass="num-block" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="88.0" layoutY="173.0" styleClass="num-block" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+               </children>
+            </GridPane>
+            <GridPane layoutX="244.0" layoutY="476.0" styleClass="sub-grid" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <TextField alignment="CENTER" styleClass="num-block">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="16.0" layoutY="16.0" styleClass="num-block" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="88.0" layoutY="16.0" styleClass="num-block" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="10.0" layoutY="16.0" styleClass="num-block" GridPane.columnIndex="2">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="10.0" layoutY="95.0" styleClass="num-block" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="88.0" layoutY="95.0" styleClass="num-block" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="166.0" layoutY="95.0" styleClass="num-block" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="10.0" layoutY="173.0" styleClass="num-block" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField alignment="CENTER" layoutX="88.0" layoutY="173.0" styleClass="num-block" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="33.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </GridPane.margin>
+                  </TextField>
+               </children>
+            </GridPane>
+         </children>
+      </GridPane>
+   </center>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" />
+   </padding>
+   <bottom>
+      <VBox prefHeight="180.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="timeLabel" text="Time: " textFill="#266cdc">
+               <font>
+                  <Font name="Calibri Bold" size="20.0" />
+               </font>
+            </Label>
+            <HBox prefWidth="700.0" spacing="5.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#onCheck" prefHeight="60.0" prefWidth="230.0" styleClass="game-btn" text="Solve" textFill="#266cdc" translateY="100.0">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#onHint" prefHeight="60.0" prefWidth="230.0" styleClass="game-btn" text="Hint" textFill="#266cdc" translateY="100.0">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="245.0" layoutY="10.0" mnemonicParsing="false" onAction="#onHome" prefHeight="60.0" prefWidth="230.0" styleClass="game-btn" text="Home" textFill="#266cdc" translateY="100.0">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="24.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </bottom>
+</BorderPane>

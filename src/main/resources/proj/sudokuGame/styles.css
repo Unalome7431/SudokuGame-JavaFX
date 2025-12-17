@@ -1,0 +1,59 @@
+.header {
+
+}
+
+.side-bar {
+
+}
+
+.sub-grid {
+    -fx-border-width: 4px 0px 0px 4px;
+    -fx-border-color: black;
+    -fx-grid-lines-visible: true;
+}
+
+.num-block {
+    -fx-background-color: rgba(232, 232, 232, 0.5);
+    -fx-background-radius: 5px;
+}
+
+.game-btn {
+    -fx-background-color: #266cdc;
+    -fx-text-fill: white;
+    -fx-background-radius: 12px;
+
+    -fx-effect: dropshadow(three-pass-box, black, 10, 0, 0, 0);
+}
+
+.game-btn:hover {
+    -fx-background-color: #0149BD;
+    -fx-text-fill: white;
+        -fx-scale-y: 0.99;
+        -fx-scale-x: 0.99;
+
+    -fx-effect: dropshadow(three-pass-box, black, 5, 0, 0, 0);
+}
+
+.game-btn:pressed {
+    -fx-background-color: rgba(232, 232, 232, 0.8);
+    -fx-text-fill: #266cdc;
+    -fx-scale-y: 0.98;
+    -fx-scale-x: 0.98;
+
+    -fx-effect: none;
+}
+
+/* added class later using javafx */
+.on-filled {
+    -fx-background-color: transparent;
+    -fx-text-fill: #266cdc;
+}
+
+.wrong-input {
+    -fx-text-fill: #ED5353;
+}
+
+.right-input {
+    -fx-text-fill: #74D856;
+    -fx-background-color: transparent;
+}
